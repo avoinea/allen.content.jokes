@@ -1,0 +1,11 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="stiamro">
+
+  <browser:page name="jokes.setup" class=".Setup"
+    for="zope.location.interfaces.ISite"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+</configure>

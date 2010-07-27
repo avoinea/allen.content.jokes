@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="allen">
+
+  <include package="allen.content.core" />
+
+  <include package=".page" />
+  <include package=".server" />
+  <include package=".joke" />
+  <include package=".section" />
+
+  <include package=".catalog" />
+  <include package=".setup" />
+
+</configure>

@@ -1,0 +1,24 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="stiamro">
+
+  <adapter
+    for="..interfaces.IJoke"
+    name="joke.indexer"
+    factory=".indexer.ItemIndexer" />
+
+  <subscriber
+    for="..interfaces.IJoke zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.joke_on_add"
+   />
+
+  <subscriber
+    for="..interfaces.IJoke zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".events.joke_on_change"
+   />
+
+  <subscriber
+    for="..interfaces.IJoke zope.app.container.interfaces.IObjectRemovedEvent"
+    handler=".events.joke_on_delete"
+   />
+
+</configure>

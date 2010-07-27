@@ -1,0 +1,53 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="allen">
+
+  <class class=".Joke">
+    <require
+      interface="..interfaces.IJoke"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.IJoke"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Allen Joke"
+    description="Joke"
+    class=".Joke"
+    for="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+  <browser:page
+    name="edit.html"
+    menu="zmi_views"
+    title="Edit"
+    for="..interfaces.IJoke"
+    permission="zope.ManageServices"
+    class=".browser.Edit"
+    />
+
+  <browser:page
+    name="content.html"
+    class=".browser.View"
+    for="..interfaces.IJoke"
+    template="content.pt"
+    layer="zope.interface.Interface"
+    permission="zope.View" />
+
+  <browser:page
+    name="index.html"
+    class=".browser.View"
+    for="..interfaces.IJoke"
+    template="index.pt"
+    layer="zope.interface.Interface"
+    permission="zope.View" />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.IJoke"
+    file="icon.png"
+  />
+
+</configure>

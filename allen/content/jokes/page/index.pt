@@ -1,0 +1,6 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="allen">
+  <div metal:fill-slot="body" class="jokes-body" id="jokes-body">
+    <tal:newsitems replace="structure context/@@content.html" />
+  </div>
+</metal:block>

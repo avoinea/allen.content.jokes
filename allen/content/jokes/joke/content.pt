@@ -1,0 +1,36 @@
+<div class="newsitem" tal:define="
+  url context/@@absolute_url;
+  title python:context.title;">
+  <div style="text-align: center">
+    <a tal:define="icon python:view.thumbnail(size='album');"
+      tal:condition="icon" tal:attributes="href url; title title">
+      <img tal:attributes="
+        src string:$icon/@@scale/album; title title; alt title" />
+    </a>
+  </div>
+  <h3>
+    <a tal:content="title" tal:attributes="href url; title title" />
+  </h3>
+  <div>
+    <h4 tal:content="structure python:view.description" />
+  </div>
+  <div class="n-underline">
+    <div class="n-share">
+      <a title="Adauga banc pe facebook" target="_blank"
+        tal:attributes="href string:http://www.facebook.com/sharer.php?u=$url&t=$title">
+        <img src="/@@/www/facebook.png"
+          alt="facebook" title="Adauga banc pe facebook" />
+      </a>
+      <a title="Adauga banc pe twitter" target="_blank"
+        tal:attributes="href string:http://twitter.com/home?status=$url">
+        <img src="/@@/www/twitter.png"
+          title="Adauga banc pe twitter" alt="Twitter" />
+      </a>
+      <a title="Adauga banc pe google buzz" target="_blank"
+        tal:attributes="href string:http://google.com/reader/link?url=$url&title=$title">
+        <img src="/@@/www/buzz.png"
+          title="Adauga banc pe google buzz" alt="Buzz" />
+      </a>
+    </div>
+  </div>
+</div>

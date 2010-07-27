@@ -1,0 +1,6 @@
+<metal:block use-macro="context/@@standard_macros/page"
+  i18n:domain="allen">
+  <div metal:fill-slot="body" class="jokes-section-body" id="jokes-section-body">
+    <tal:newsitems replace="structure python:view.content" />
+  </div>
+</metal:block>
